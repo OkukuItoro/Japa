@@ -1,0 +1,136 @@
+.header {
+  color: white;
+}
+
+/* HERO HEADING */
+.heading {
+  &__primary {
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+    &--sub {
+      display: block;
+      font-size: 4rem;
+      font-weight: 400;
+
+      animation: moveInLeft 1s ease-out;
+    }
+
+    &--main {
+      display: block;
+      font-size: 7rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      animation: moveInRight 1s ease-out;
+    }
+  }
+}
+
+/* VACATION, ISLAND, ACTIVITIES HEADING */
+.vacation__heading,
+.island-text-box,
+.activities-text-header__heading {
+  font-size: 2.4rem;
+}
+
+.section__discover {
+  font-family: "Poppins", sans-serif;
+}
+
+.discover-text-box {
+  &__heading-main {
+    text-align: center;
+    background-color: var(--color-orange);
+    color: #fff;
+    margin-block: 2rem;
+    margin-inline: 2rem;
+  }
+  &__heading-sub {
+    &--2 {
+      display: block;
+      border-bottom: 1rem solid var(--color-orange);
+      padding-bottom: 1rem;
+      width: 52%;
+    }
+  }
+}
+
+.island-card__heading {
+  position: absolute;
+  right: 5rem;
+  bottom: 7rem;
+  text-transform: uppercase;
+  &--sub {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 200;
+  }
+
+  &--main {
+    display: flex;
+    align-items: center;
+    &-1 {
+      color: var(--color-orange);
+      font-size: 9rem;
+    }
+
+    &-2 {
+      color: var(--color-orange);
+      font-size: 1.7rem;
+    }
+
+    &-3 {
+      display: block;
+    }
+  }
+}
+
+.island-card__booking-cta {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1rem 4rem;
+
+  &--text {
+    font-size: 1.5rem;
+    color: var(--color-orange);
+  }
+}
+
+//island text box
+.island-text-box__text {
+  font-size: var(--section-text-size);
+  &--2 {
+    display: block;
+  }
+  &--3 {
+    display: block;
+    border-bottom: 1rem solid var(--color-orange);
+    padding-bottom: 1rem;
+    width: 52%;
+  }
+}
+
+/* ACTIVITIES HEADING TEXT & GALLERY TEXT */
+.activities-text-header__heading {
+  border-bottom: 1rem solid var(--color-orange);
+  width: 30%;
+}
+.activities-gallery__text {
+  font-size: 2.1rem;
+}
+
+/* VACATION HEADING */
+.vacation__heading {
+  &--highlighted {
+    border-bottom: 1rem solid var(--color-orange);
+    padding-bottom: 1rem;
+    width: 52%;
+  }
+}
+
+/* SPONSORS HEADING */
+.sponsors__heading {
+  font-size: 2.4rem;
+  border-bottom: 1rem solid var(--color-orange);
+  width: 6%;
+}

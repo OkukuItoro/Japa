@@ -1,0 +1,50 @@
+:root {
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.56);
+
+  --color-blue: rgb(31, 147, 242);
+
+  --color-orange: orange;
+
+  --section-text-size: 2.7rem;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //1rem = 10px;
+
+  // // phone and tab-portrait are the same
+  // @include respond(tab-land) {
+  //   //width < 1200?
+  //   font-size: 56.25%; //1rem = 9px; 9/16 = 56.25%
+  // }
+  // @include respond(tab-portrait) {
+  //   //width < 900?
+  //   font-size: 50%; //1rem = 8px; 8/16 = 50%
+  // }
+  // @include respond(big-desktop) {
+  //   font-size: 75%; //1rem = 12px; 12/16 = 75%
+  // }
+}
+
+body {
+  box-sizing: border-box;
+
+  font-family: "Montserrat", sans-serif;
+}

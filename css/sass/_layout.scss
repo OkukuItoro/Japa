@@ -1,0 +1,101 @@
+/* HEADER (NAVIGATION & HERO) */
+.header {
+  height: 100vh;
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+    margin-inline: 3rem;
+    padding-top: 2rem;
+    padding-inline: 1rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+/* ALL SECTIONS */
+section {
+  margin: 6rem 0;
+}
+
+/* SECTION DISCOVER ISLAND AND ACTIVITIES */
+.section__discover,
+.section__island {
+  height: 80vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* SECTION ACTIVITIES */
+.section__activities {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section__vacations {
+  height: 200vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.section__sponsors {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer {
+  background-color: black;
+  color: #fff;
+  padding: 4rem;
+
+  &__logo-box {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid;
+
+    &--logo {
+      display: flex;
+      align-items: baseline;
+      margin-top: 4rem;
+      &-1 {
+        font-size: 3.3rem;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+    &--logo {
+      margin: 1rem;
+    }
+  }
+
+  &__copy-right {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.6rem;
+  }
+}
