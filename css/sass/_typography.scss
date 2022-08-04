@@ -26,35 +26,83 @@
   }
 }
 
-/* VACATION, ISLAND, ACTIVITIES HEADING */
-.vacation__heading,
-.island-text-box,
-.activities-text-header__heading {
-  font-size: 2.4rem;
-}
+/* SECTION HEADING */
+.section-heading {
+  font-size: var(--section-text-size);
+  padding: 2rem;
+  margin-bottom: var(--heading-margin-bottom);
 
-.section__discover {
-  font-family: "Poppins", sans-serif;
-}
-
-.discover-text-box {
-  &__heading-main {
-    text-align: center;
-    background-color: var(--color-orange);
-    color: #fff;
-    margin-block: 2rem;
-    margin-inline: 2rem;
-  }
-  &__heading-sub {
+  &__primary {
     &--2 {
+      display: block;
+    }
+
+    &--underline {
       display: block;
       border-bottom: 1rem solid var(--color-orange);
       padding-bottom: 1rem;
       width: 52%;
     }
+
+    &--vacation {
+      border-bottom: 1rem solid var(--color-orange);
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__secondary {
+    text-align: center;
+    background-color: var(--color-orange);
+    color: #fff;
+    margin: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    &__primary {
+      &--2 {
+        display: inline;
+      }
+      &--underline {
+        display: inline;
+      }
+    }
+
+    &__secondary {
+      margin: 2rem 10rem;
+    }
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    &__primary {
+      &--prices {
+        display: block;
+        width: 22%;
+      }
+    }
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    &__primary {
+      &--2 {
+        display: block;
+      }
+      &--underline {
+        display: block;
+      }
+    }
+
+    &__secondary {
+      margin: 2rem;
+    }
   }
 }
 
+/* SECTION DISCOVER FONT STYLE */
+.section__discover {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ISLAND CARD TEXT */
 .island-card__heading {
   position: absolute;
   right: 5rem;
@@ -84,11 +132,11 @@
     }
   }
 }
-
 .island-card__booking-cta {
   background-color: #fff;
   border-radius: 5px;
   padding: 1rem 4rem;
+  cursor: pointer;
 
   &--text {
     font-size: 1.5rem;
@@ -96,41 +144,7 @@
   }
 }
 
-//island text box
-.island-text-box__text {
-  font-size: var(--section-text-size);
-  &--2 {
-    display: block;
-  }
-  &--3 {
-    display: block;
-    border-bottom: 1rem solid var(--color-orange);
-    padding-bottom: 1rem;
-    width: 52%;
-  }
-}
-
-/* ACTIVITIES HEADING TEXT & GALLERY TEXT */
-.activities-text-header__heading {
-  border-bottom: 1rem solid var(--color-orange);
-  width: 30%;
-}
+/* ACTIVITIES GALLERY TEXT */
 .activities-gallery__text {
   font-size: 2.1rem;
-}
-
-/* VACATION HEADING */
-.vacation__heading {
-  &--highlighted {
-    border-bottom: 1rem solid var(--color-orange);
-    padding-bottom: 1rem;
-    width: 52%;
-  }
-}
-
-/* SPONSORS HEADING */
-.sponsors__heading {
-  font-size: 2.4rem;
-  border-bottom: 1rem solid var(--color-orange);
-  width: 6%;
 }

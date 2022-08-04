@@ -22,20 +22,47 @@
     transform: translate(-50%, -50%);
     text-align: center;
   }
+
+  @media only screen and (max-width: $bp-medium) {
+    height: 80vh;
+
+    &__text-box {
+      top: 40%;
+    }
+  }
 }
 
 /* ALL SECTIONS */
 section {
-  margin: 6rem 0;
+  margin-block: var(--section-margin-block);
 }
 
-/* SECTION DISCOVER ISLAND AND ACTIVITIES */
-.section__discover,
-.section__island {
-  height: 80vh;
+/* SECTION DISCOVER AND ISLAND LAYOUT */
+.section__discover {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    height: fit-content;
+    flex-direction: column;
+    padding-block: 2rem;
+  }
+}
+
+.section__island {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+    padding-block: 2rem;
+
+    .island__header {
+      order: -1;
+    }
+  }
 }
 
 /* SECTION ACTIVITIES */
@@ -44,58 +71,40 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    height: 50vh;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    display: none;
+  }
 }
 
-.section__vacations {
-  height: 200vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
+/* SECTION VACATIONS & SPONSORS LAYOUT */
+.section__vacations,
 .section__sponsors {
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
 }
 
+/* SECTION VACATIONS */
+.section__vacations {
+  height: 150rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    height: 130rem;
+  }
+}
+
+/* SECTION SPONSORS */
+.section__sponsors {
+}
+
+/* FOOTER */
 .footer {
   background-color: black;
   color: #fff;
   padding: 4rem;
-
-  &__logo-box {
-    display: flex;
-    justify-content: center;
-    border-top: 1px solid;
-
-    &--logo {
-      display: flex;
-      align-items: baseline;
-      margin-top: 4rem;
-      &-1 {
-        font-size: 3.3rem;
-      }
-    }
-  }
-
-  &__social {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-
-    &--logo {
-      margin: 1rem;
-    }
-  }
-
-  &__copy-right {
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    font-size: 1.6rem;
-  }
 }

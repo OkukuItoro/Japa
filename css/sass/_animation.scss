@@ -1,48 +1,40 @@
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-  80% {
-    transform: translateX(1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+.heading-text-animation {
+  animation: movesUp 1s ease-in;
 }
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-  80% {
-    transform: translateX(-1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
+
+.luxury-text-animation {
+  animation: movesUp 2s ease-out 2.15s;
+  animation-fill-mode: backwards;
+}
+
+.serenity-text-animation {
+  animation: movesDown 2s ease-out 2.15s;
+  animation-fill-mode: backwards;
+
+  @media only screen and (max-width: $bp-small) {
+    animation: movesUp 2s ease-out 2.15s;
+    animation-fill-mode: backwards;
   }
 }
 
-@keyframes movesUp {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+.button-animation {
+  animation: movesUp 2s ease-in 2.1s;
+  animation-fill-mode: backwards;
 }
 
-@keyframes movesDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-3rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+.movesUp-animation {
+  animation: movesUp 2s ease-in;
+}
+
+.zoomIn-animation {
+  animation: zoomIn 2s ease-in 2.1s;
+  animation-fill-mode: backwards;
+}
+
+.movesDown-animation {
+  animation: movesDown 2s ease-in;
+}
+
+.movesInLeft-animation {
+  animation: moveInLeft 2s ease-in-out;
 }

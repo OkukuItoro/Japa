@@ -1,18 +1,24 @@
 :root {
-  --color-grey-light-1: #faf9f9;
-  --color-grey-light-2: #f4f2f2;
-  --color-grey-light-3: #f0eeee;
-  --color-grey-light-4: #ccc;
+  /* COLORS */
+  --color-grey-light: #f0eeee;
+  --color-grey-light-2: #ccc;
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
-  --color-grey-dark-3: #999;
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
   --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.56);
   --color-blue: rgb(31, 147, 242);
   --color-orange: orange;
-  --section-text-size: 2.7rem;
+  --color-transparent: rgba(255, 255, 255, 0.525);
+  --color-nav-transparent: rgba(45, 45, 45, 0.142);
+  /* FONT SIZES */
+  --section-text-size: 2.5rem;
+  /* SECTION MARGIN */
+  --section-margin-block: 15rem;
+  /* ELEMENT MARGIN BOTTOM */
+  --heading-margin-bottom: 10rem;
 }
 
+/* MEDIA QUERY BP  */
 *,
 *::after,
 *::before {
@@ -26,10 +32,85 @@ html {
   font-size: 62.5%;
 }
 
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media only screen and (max-width: 61.875em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media only screen and (max-width: 40.625em) {
+  html {
+    font-size: 40.625%;
+  }
+}
+
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+}
+
+.heading-text-animation {
+  -webkit-animation: movesUp 1s ease-in;
+          animation: movesUp 1s ease-in;
+}
+
+.luxury-text-animation {
+  -webkit-animation: movesUp 2s ease-out 2.15s;
+          animation: movesUp 2s ease-out 2.15s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+.serenity-text-animation {
+  -webkit-animation: movesDown 2s ease-out 2.15s;
+          animation: movesDown 2s ease-out 2.15s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+@media only screen and (max-width: 40.625em) {
+  .serenity-text-animation {
+    -webkit-animation: movesUp 2s ease-out 2.15s;
+            animation: movesUp 2s ease-out 2.15s;
+    -webkit-animation-fill-mode: backwards;
+            animation-fill-mode: backwards;
+  }
+}
+
+.button-animation {
+  -webkit-animation: movesUp 2s ease-in 2.1s;
+          animation: movesUp 2s ease-in 2.1s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+.movesUp-animation {
+  -webkit-animation: movesUp 2s ease-in;
+          animation: movesUp 2s ease-in;
+}
+
+.zoomIn-animation {
+  -webkit-animation: zoomIn 2s ease-in 2.1s;
+          animation: zoomIn 2s ease-in 2.1s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+.movesDown-animation {
+  -webkit-animation: movesDown 2s ease-in;
+          animation: movesDown 2s ease-in;
+}
+
+.movesInLeft-animation {
+  -webkit-animation: moveInLeft 2s ease-in-out;
+          animation: moveInLeft 2s ease-in-out;
 }
 
 @-webkit-keyframes moveInLeft {
@@ -152,6 +233,32 @@ body {
   }
 }
 
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 /* NAVIGATION TEXT LOGO */
 .navigation__logo {
   display: -webkit-box;
@@ -208,7 +315,7 @@ body {
 .nav-search__input {
   font-family: inherit;
   font-size: inherit;
-  background-color: rgba(45, 45, 45, 0.142);
+  background-color: var(--color-nav-transparent);
   border: none;
   padding: 0.7rem 2rem;
   border-radius: 100px;
@@ -221,7 +328,8 @@ body {
 .nav-search__input:focus {
   outline: none;
   width: 100%;
-  background-color: var(--color-grey-light-3);
+  color: var(--color-grey-dark-1);
+  background-color: var(--color-grey-light);
 }
 
 .nav-search__input::-webkit-input-placeholder {
@@ -276,7 +384,7 @@ body {
 }
 
 .hero-search__input {
-  background-color: rgba(255, 255, 255, 0.525);
+  background-color: var(--color-transparent);
   color: var(--color-grey-dark-2);
   border: none;
   font-size: 1.2rem;
@@ -292,28 +400,27 @@ body {
 
 .hero-search__input:focus {
   background: white;
-  -webkit-box-shadow: 0 0 2px #562403;
-          box-shadow: 0 0 2px #562403;
+  color: black;
 }
 
 .hero-search__input::-webkit-input-placeholder {
   font-weight: 200;
-  color: var(--color-grey-dark);
+  color: var(--color-grey-dark-2);
 }
 
 .hero-search__input:-ms-input-placeholder {
   font-weight: 200;
-  color: var(--color-grey-dark);
+  color: var(--color-grey-dark-2);
 }
 
 .hero-search__input::-ms-input-placeholder {
   font-weight: 200;
-  color: var(--color-grey-dark);
+  color: var(--color-grey-dark-2);
 }
 
 .hero-search__input::placeholder {
   font-weight: 200;
-  color: var(--color-grey-dark);
+  color: var(--color-grey-dark-2);
 }
 
 .hero-search__button {
@@ -345,20 +452,12 @@ body {
           box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.25);
 }
 
-/* DISCOVER TEXT BOX */
-.discover-text-box {
-  font-size: 2.2rem;
-  padding: 2rem;
-  -webkit-animation: movesUp 1s ease-in;
-          animation: movesUp 1s ease-in;
-}
-
 /* DISCOVER CARDS */
 .discover-cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 85%;
+  height: 65vh;
   font-size: var(--section-text-size);
   font-weight: 700;
   color: #fff;
@@ -374,8 +473,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-animation: movesUp 1s ease-in;
-          animation: movesUp 1s ease-in;
 }
 
 .discover-cards__luxury {
@@ -387,13 +484,6 @@ body {
           align-items: flex-end;
 }
 
-.discover-cards__luxury--text {
-  -webkit-animation: movesUp 0.5s ease-out 0.75s;
-          animation: movesUp 0.5s ease-out 0.75s;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
-}
-
 .discover-cards__serenity {
   width: 20vw;
   background-image: url(/img/discover-image-1.jpg);
@@ -403,21 +493,52 @@ body {
           align-items: flex-start;
 }
 
-.discover-cards__serenity--text {
-  -webkit-animation: movesDown 0.5s ease-out 0.75s;
-          animation: movesDown 0.5s ease-out 0.75s;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
+@media only screen and (max-width: 61.875em) {
+  .discover-cards {
+    width: 65rem;
+    height: 50rem;
+  }
+  .discover-cards__luxury, .discover-cards__serenity {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 40.625em) {
+  .discover-cards {
+    display: block;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 25rem;
+    height: 70rem;
+  }
+  .discover-cards__luxury, .discover-cards__serenity {
+    width: 100%;
+    height: 30rem;
+    margin-block: 2rem;
+  }
+  .discover-cards__serenity {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
 }
 
 /* ISLAND CARD */
 .island-card {
-  height: 80%;
+  height: 70vh;
   width: 53vw;
   background-image: url(/img/sunset-island-2.jpg);
   background-size: cover;
   border-radius: 1rem;
   position: relative;
+}
+
+@media only screen and (max-width: 61.875em) {
+  .island-card {
+    height: 35rem;
+    width: 70vw;
+  }
 }
 
 /* ACTIVITIES GALLERY */
@@ -469,20 +590,20 @@ body {
 .vacation-gallery {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 50% 50% 50% 50%;
-      grid-template-rows: 50% 50% 50% 50%;
+  -ms-grid-rows: 50% 50% 50% 70%;
+      grid-template-rows: 50% 50% 50% 70%;
   -ms-grid-columns: 50% 50%;
       grid-template-columns: 50% 50%;
   grid-gap: 2rem;
-  height: 90%;
-  width: 75vw;
+  width: 70vw;
+  height: 60rem;
+  margin-top: 5rem;
   padding: 2rem;
 }
 
 .vacation-gallery__photo--1 {
   background-image: url(/img/vacation-1.jpg);
   background-size: cover;
-  width: 100%;
 }
 
 .vacation-gallery__photo--2 {
@@ -516,8 +637,15 @@ body {
   grid-column: 1 / span 2;
 }
 
+@media only screen and (max-width: 61.875em) {
+  .vacation-gallery {
+    height: 42rem;
+  }
+}
+
 /* SPONSORS LOGO */
 .sponsors__box {
+  height: 50rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -531,8 +659,23 @@ body {
 }
 
 .sponsors__box--logo {
-  width: 13vw;
+  width: 12vw;
   margin: 2rem;
+}
+
+@media only screen and (max-width: 40.625em) {
+  .sponsors__box {
+    height: 30rem;
+  }
+  .sponsors__box--logo {
+    width: 10vw;
+  }
+}
+
+@media only screen and (max-width: 25.625em) {
+  .sponsors__box--logo {
+    width: 14vw;
+  }
 }
 
 /* FOOTER ABOUT */
@@ -595,6 +738,65 @@ body {
   list-style: none;
 }
 
+@media only screen and (max-width: 40.625em) {
+  .about {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+/* FOOTER LOGO BOX */
+.footer__logo-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top: 1px solid;
+}
+
+.footer__logo-box--logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-top: 4rem;
+}
+
+.footer__logo-box--logo-1 {
+  font-size: 3.3rem;
+}
+
+/* FOOTER SOCIAL*/
+.footer__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2rem;
+}
+
+.footer__social--logo {
+  margin: 1rem;
+}
+
+/* FOOTER COPY RIGHTS */
+.footer__copy-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+
 /* HEADER (NAVIGATION & HERO) */
 .header {
   height: 100vh;
@@ -628,15 +830,22 @@ body {
   text-align: center;
 }
 
-/* ALL SECTIONS */
-section {
-  margin: 6rem 0;
+@media only screen and (max-width: 61.875em) {
+  .header {
+    height: 80vh;
+  }
+  .header__text-box {
+    top: 40%;
+  }
 }
 
-/* SECTION DISCOVER ISLAND AND ACTIVITIES */
-.section__discover,
-.section__island {
-  height: 80vh;
+/* ALL SECTIONS */
+section {
+  margin-block: var(--section-margin-block);
+}
+
+/* SECTION DISCOVER AND ISLAND LAYOUT */
+.section__discover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -646,6 +855,46 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media only screen and (max-width: 61.875em) {
+  .section__discover {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-block: 2rem;
+  }
+}
+
+.section__island {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 61.875em) {
+  .section__island {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-block: 2rem;
+  }
+  .section__island .island__header {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
 }
 
 /* SECTION ACTIVITIES */
@@ -663,25 +912,21 @@ section {
           align-items: center;
 }
 
-.section__vacations {
-  height: 200vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+@media only screen and (max-width: 61.875em) {
+  .section__activities {
+    height: 50vh;
+  }
 }
 
+@media only screen and (max-width: 40.625em) {
+  .section__activities {
+    display: none;
+  }
+}
+
+/* SECTION VACATIONS & SPONSORS LAYOUT */
+.section__vacations,
 .section__sponsors {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -689,67 +934,28 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
+/* SECTION VACATIONS */
+.section__vacations {
+  height: 150rem;
+}
+
+@media only screen and (max-width: 61.875em) {
+  .section__vacations {
+    height: 130rem;
+  }
+}
+
+/* SECTION SPONSORS */
+/* FOOTER */
 .footer {
   background-color: black;
   color: #fff;
   padding: 4rem;
-}
-
-.footer__logo-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-top: 1px solid;
-}
-
-.footer__logo-box--logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  margin-top: 4rem;
-}
-
-.footer__logo-box--logo-1 {
-  font-size: 3.3rem;
-}
-
-.footer__social {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 2rem;
-}
-
-.footer__social--logo {
-  margin: 1rem;
-}
-
-.footer__copy-right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 1rem;
-  font-size: 1.6rem;
 }
 
 .header {
@@ -780,32 +986,73 @@ section {
           animation: moveInRight 1s ease-out;
 }
 
-/* VACATION, ISLAND, ACTIVITIES HEADING */
-.vacation__heading,
-.island-text-box,
-.activities-text-header__heading {
-  font-size: 2.4rem;
+/* SECTION HEADING */
+.section-heading {
+  font-size: var(--section-text-size);
+  padding: 2rem;
+  margin-bottom: var(--heading-margin-bottom);
 }
 
-.section__discover {
-  font-family: "Poppins", sans-serif;
+.section-heading__primary--2 {
+  display: block;
 }
 
-.discover-text-box__heading-main {
-  text-align: center;
-  background-color: var(--color-orange);
-  color: #fff;
-  margin-block: 2rem;
-  margin-inline: 2rem;
-}
-
-.discover-text-box__heading-sub--2 {
+.section-heading__primary--underline {
   display: block;
   border-bottom: 1rem solid var(--color-orange);
   padding-bottom: 1rem;
   width: 52%;
 }
 
+.section-heading__primary--vacation {
+  border-bottom: 1rem solid var(--color-orange);
+  padding-bottom: 1rem;
+}
+
+.section-heading__secondary {
+  text-align: center;
+  background-color: var(--color-orange);
+  color: #fff;
+  margin: 2rem;
+}
+
+@media only screen and (max-width: 61.875em) {
+  .section-heading__primary--2 {
+    display: inline;
+  }
+  .section-heading__primary--underline {
+    display: inline;
+  }
+  .section-heading__secondary {
+    margin: 2rem 10rem;
+  }
+}
+
+@media only screen and (max-width: 40.625em) {
+  .section-heading__primary--prices {
+    display: block;
+    width: 22%;
+  }
+}
+
+@media only screen and (max-width: 25.625em) {
+  .section-heading__primary--2 {
+    display: block;
+  }
+  .section-heading__primary--underline {
+    display: block;
+  }
+  .section-heading__secondary {
+    margin: 2rem;
+  }
+}
+
+/* SECTION DISCOVER FONT STYLE */
+.section__discover {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ISLAND CARD TEXT */
 .island-card__heading {
   position: absolute;
   right: 5rem;
@@ -846,6 +1093,7 @@ section {
   background-color: #fff;
   border-radius: 5px;
   padding: 1rem 4rem;
+  cursor: pointer;
 }
 
 .island-card__booking-cta--text {
@@ -853,42 +1101,8 @@ section {
   color: var(--color-orange);
 }
 
-.island-text-box__text {
-  font-size: var(--section-text-size);
-}
-
-.island-text-box__text--2 {
-  display: block;
-}
-
-.island-text-box__text--3 {
-  display: block;
-  border-bottom: 1rem solid var(--color-orange);
-  padding-bottom: 1rem;
-  width: 52%;
-}
-
-/* ACTIVITIES HEADING TEXT & GALLERY TEXT */
-.activities-text-header__heading {
-  border-bottom: 1rem solid var(--color-orange);
-  width: 30%;
-}
-
+/* ACTIVITIES GALLERY TEXT */
 .activities-gallery__text {
   font-size: 2.1rem;
-}
-
-/* VACATION HEADING */
-.vacation__heading--highlighted {
-  border-bottom: 1rem solid var(--color-orange);
-  padding-bottom: 1rem;
-  width: 52%;
-}
-
-/* SPONSORS HEADING */
-.sponsors__heading {
-  font-size: 2.4rem;
-  border-bottom: 1rem solid var(--color-orange);
-  width: 6%;
 }
 /*# sourceMappingURL=main.css.map */

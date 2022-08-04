@@ -42,7 +42,7 @@
   &__input {
     font-family: inherit;
     font-size: inherit;
-    background-color: rgba(45, 45, 45, 0.142);
+    background-color: var(--color-nav-transparent);
     border: none;
     padding: 0.7rem 2rem;
     border-radius: 100px;
@@ -53,7 +53,8 @@
     &:focus {
       outline: none;
       width: 100%;
-      background-color: var(--color-grey-light-3);
+      color: var(--color-grey-dark-1);
+      background-color: var(--color-grey-light);
     }
 
     &::placeholder {
@@ -89,7 +90,7 @@
   animation: movesUp 1s ease-in;
 
   &__input {
-    background-color: rgba(255, 255, 255, 0.525);
+    background-color: var(--color-transparent);
     color: var(--color-grey-dark-2);
     border: none;
     font-size: 1.2rem;
@@ -100,20 +101,14 @@
     flex-grow: 1;
     outline: none;
 
-    // &:focus {
-    //   outline: none;
-    //   width: 100%;
-    //   background-color: var(--color-grey-light-3);
-    // }
-
     &:focus {
       background: white;
-      box-shadow: 0 0 2px #562403;
+      color: black;
     }
 
     &::placeholder {
       font-weight: 200;
-      color: var(--color-grey-dark);
+      color: var(--color-grey-dark-2);
     }
   }
 
@@ -137,18 +132,10 @@
   }
 }
 
-/* DISCOVER TEXT BOX */
-.discover-text-box {
-  font-size: 2.2rem;
-  padding: 2rem;
-
-  animation: movesUp 1s ease-in;
-}
-
 /* DISCOVER CARDS */
 .discover-cards {
   display: flex;
-  height: 85%;
+  height: 65vh;
   font-size: var(--section-text-size);
   font-weight: 700;
   color: #fff;
@@ -160,7 +147,6 @@
     padding: 2rem;
     display: flex;
     justify-content: center;
-    animation: movesUp 1s ease-in;
   }
 
   &__luxury {
@@ -168,11 +154,6 @@
     background-image: url(/img/discover-image-2.jpg);
     background-size: cover;
     align-items: flex-end;
-
-    &--text {
-      animation: movesUp 0.5s ease-out 0.75s;
-      animation-fill-mode: backwards;
-    }
   }
 
   &__serenity {
@@ -180,22 +161,50 @@
     background-image: url(/img/discover-image-1.jpg);
     background-size: cover;
     align-items: flex-start;
+  }
 
-    &--text {
-      animation: movesDown 0.5s ease-out 0.75s;
-      animation-fill-mode: backwards;
+  @media only screen and (max-width: $bp-medium) {
+    width: 65rem;
+    height: 50rem;
+
+    &__luxury,
+    &__serenity {
+      width: 50%;
+    }
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    display: block;
+    align-items: center;
+    width: 25rem;
+    height: 70rem;
+
+    &__luxury,
+    &__serenity {
+      width: 100%;
+      height: 30rem;
+      margin-block: 2rem;
+    }
+
+    &__serenity {
+      align-items: flex-end;
     }
   }
 }
 
 /* ISLAND CARD */
 .island-card {
-  height: 80%;
+  height: 70vh;
   width: 53vw;
   background-image: url(/img/sunset-island-2.jpg);
   background-size: cover;
   border-radius: 1rem;
   position: relative;
+
+  @media only screen and (max-width: $bp-medium) {
+    height: 35rem;
+    width: 70vw;
+  }
 }
 
 /* ACTIVITIES GALLERY */
@@ -246,19 +255,19 @@
 /* VACATION GALLERY */
 .vacation-gallery {
   display: grid;
-  grid-template-rows: 50% 50% 50% 50%;
+  grid-template-rows: 50% 50% 50% 70%;
   grid-template-columns: 50% 50%;
   grid-gap: 2rem;
 
-  height: 90%;
-  width: 75vw;
+  width: 70vw;
+  height: 60rem;
+  margin-top: 5rem;
   padding: 2rem;
 
   &__photo {
     &--1 {
       background-image: url(/img/vacation-1.jpg);
       background-size: cover;
-      width: 100%;
     }
     &--2 {
       background-image: url(/img/vacation-2.jpg);
@@ -283,10 +292,15 @@
       grid-column: 1 / span 2;
     }
   }
+
+  @media only screen and (max-width: $bp-medium) {
+    height: 42rem;
+  }
 }
 
 /* SPONSORS LOGO */
 .sponsors__box {
+  height: 50rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -294,8 +308,21 @@
   width: 70%;
 
   &--logo {
-    width: 13vw;
+    width: 12vw;
     margin: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    height: 30rem;
+    &--logo {
+      width: 10vw;
+    }
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    &--logo {
+      width: 14vw;
+    }
   }
 }
 
@@ -351,4 +378,43 @@
       list-style: none;
     }
   }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-wrap: wrap;
+  }
+}
+
+/* FOOTER LOGO BOX */
+.footer__logo-box {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid;
+
+  &--logo {
+    display: flex;
+    align-items: baseline;
+    margin-top: 4rem;
+    &-1 {
+      font-size: 3.3rem;
+    }
+  }
+}
+
+/* FOOTER SOCIAL*/
+.footer__social {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+  &--logo {
+    margin: 1rem;
+  }
+}
+
+/* FOOTER COPY RIGHTS */
+.footer__copy-right {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 1.6rem;
 }
