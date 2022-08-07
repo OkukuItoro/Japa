@@ -22,6 +22,32 @@
     ></script>
   </head>
   <body>
+    <div class="navigation-main">
+      <input
+        type="checkbox"
+        class="navigation-main__checkbox"
+        id="navi-toggle"
+      />
+
+      <label for="navi-toggle" class="navigation-main__button">
+        <span class="navigation-main__icon">&nbsp;</span>
+      </label>
+      <div class="navigation-main__background">&nbsp;</div>
+      <nav class="navigation-main__nav">
+        <div class="navigation-main__nav--links">
+          <a href="#" class="navigation-main__nav--item">Sign Up</a>
+          <a href="#" class="navigation-main__nav--item">Log In</a>
+          <a href="#footer" class="navigation-main__nav--item">About us</a>
+          <a href="#section__island" class="navigation-main__nav--item"
+            >islands</a
+          >
+          <a href="#section__vacations" class="navigation-main__nav--item"
+            >vacation gallery</a
+          >
+          <a href="#" class="navigation-main__nav--item">Blog</a>
+        </div>
+      </nav>
+    </div>
     <header class="header">
       <nav class="header__navigation">
         <div class="navigation__logo">
@@ -83,7 +109,7 @@
         </div>
       </section>
 
-      <section class="section__island">
+      <section class="section__island" id="section__island">
         <div class="island-card">
           <div class="island-card__heading">
             <h2 class="island-card__heading--sub">up to</h2>
@@ -147,7 +173,7 @@
         </div>
       </section>
 
-      <section class="section__vacations">
+      <section class="section__vacations" id="section__vacations">
         <div class="section-heading">
           <h2 class="section-heading__primary">
             <span class="section-heading__primary--vacation">Official </span

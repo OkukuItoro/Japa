@@ -62,55 +62,59 @@ body {
 }
 
 .luxury-text-animation {
-  -webkit-animation: movesUp 2s ease-out 2.15s;
-          animation: movesUp 2s ease-out 2.15s;
+  -webkit-animation: movesUp 1.1s ease-out 1.35s;
+          animation: movesUp 1.1s ease-out 1.35s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
 }
 
 .serenity-text-animation {
-  -webkit-animation: movesDown 2s ease-out 2.15s;
-          animation: movesDown 2s ease-out 2.15s;
+  -webkit-animation: movesDown 1.1s ease-out 1.35s;
+          animation: movesDown 1.1s ease-out 1.35s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
 }
 
 @media only screen and (max-width: 40.625em) {
   .serenity-text-animation {
-    -webkit-animation: movesUp 2s ease-out 2.15s;
-            animation: movesUp 2s ease-out 2.15s;
+    -webkit-animation: movesUp 1.1s ease-out 1.35s;
+            animation: movesUp 1.1s ease-out 1.35s;
     -webkit-animation-fill-mode: backwards;
             animation-fill-mode: backwards;
   }
 }
 
 .button-animation {
-  -webkit-animation: movesUp 2s ease-in 2.1s;
-          animation: movesUp 2s ease-in 2.1s;
+  -webkit-animation: movesUp 1.1s ease-in 1.35s;
+          animation: movesUp 1.1s ease-in 1.35s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
 }
 
 .movesUp-animation {
-  -webkit-animation: movesUp 2s ease-in;
-          animation: movesUp 2s ease-in;
+  -webkit-animation: movesUp 1.1s ease-in;
+          animation: movesUp 1.1s ease-in;
 }
 
 .zoomIn-animation {
-  -webkit-animation: zoomIn 2s ease-in 2.1s;
-          animation: zoomIn 2s ease-in 2.1s;
+  -webkit-animation: zoomIn 1.1s ease-in 1.35s;
+          animation: zoomIn 1.1s ease-in 1.35s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
 }
 
 .movesDown-animation {
-  -webkit-animation: movesDown 2s ease-in;
-          animation: movesDown 2s ease-in;
+  -webkit-animation: movesDown 1.1s ease-in;
+          animation: movesDown 1.1s ease-in;
 }
 
 .movesInLeft-animation {
-  -webkit-animation: moveInLeft 2s ease-in-out;
-          animation: moveInLeft 2s ease-in-out;
+  -webkit-animation: moveInLeft 1.1s ease-in-out;
+          animation: moveInLeft 1.1s ease-in-out;
+}
+
+.nav-bg-color {
+  background-color: black;
 }
 
 @-webkit-keyframes moveInLeft {
@@ -452,6 +456,20 @@ body {
           box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.25);
 }
 
+@media only screen and (max-width: 40.625em) {
+  .hero-search {
+    margin: 0;
+    padding: 0;
+  }
+  .hero-search__input {
+    width: 30rem;
+    border-radius: 5px 0 0 5px;
+  }
+  .hero-search__button {
+    border-radius: 0 5px 5px 0;
+  }
+}
+
 /* DISCOVER CARDS */
 .discover-cards {
   display: -webkit-box;
@@ -597,7 +615,6 @@ body {
   grid-gap: 2rem;
   width: 70vw;
   height: 60rem;
-  margin-top: 5rem;
   padding: 2rem;
 }
 
@@ -640,6 +657,12 @@ body {
 @media only screen and (max-width: 61.875em) {
   .vacation-gallery {
     height: 42rem;
+  }
+}
+
+@media only screen and (max-width: 40.625em) {
+  .vacation-gallery {
+    height: 30rem;
   }
 }
 
@@ -723,11 +746,16 @@ body {
   margin-bottom: 2rem;
 }
 
+.about__group {
+  margin: 1rem;
+}
+
 .about__group > * {
   margin-bottom: 3rem;
 }
 
 .about__destinations {
+  margin: 1rem;
   background-color: #fff;
   border-radius: 0.5rem;
   color: black;
@@ -834,8 +862,132 @@ body {
   .header {
     height: 80vh;
   }
+  .header__navigation {
+    border-bottom: none;
+  }
+  .header .nav-search,
+  .header .navigation__links {
+    display: none;
+  }
   .header__text-box {
     top: 40%;
+  }
+}
+
+/* RESPONSIVE HEADER */
+.navigation-main {
+  display: none;
+}
+
+@media only screen and (max-width: 61.875em) {
+  .navigation-main {
+    display: block;
+  }
+  .navigation-main__checkbox {
+    display: none;
+  }
+  .navigation-main__button {
+    background-color: transparent;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 0.8rem;
+    right: 6rem;
+    border-radius: 50%;
+    z-index: 2000;
+    text-align: center;
+    cursor: pointer;
+  }
+  .navigation-main__background {
+    height: 6rem;
+    width: 6rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    z-index: 1000;
+  }
+  .navigation-main__nav {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1500;
+    opacity: 0;
+    width: 0;
+  }
+  .navigation-main__nav--links {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 80%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .navigation-main__nav--item {
+    font-size: 3rem;
+    font-weight: 300;
+    color: white;
+    display: block;
+    padding-block: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 1rem;
+  }
+  .navigation-main__nav--item:hover {
+    font-weight: bold;
+  }
+  .navigation-main__checkbox:checked ~ .navigation-main__background {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+  }
+  .navigation-main__checkbox:checked ~ .navigation-main__nav {
+    opacity: 1;
+    width: 100%;
+  }
+  .navigation-main__icon {
+    position: relative;
+    margin-top: 3.5rem;
+  }
+  .navigation-main__icon, .navigation-main__icon::before, .navigation-main__icon::after {
+    width: 3rem;
+    height: 2px;
+    background-color: white;
+    display: inline-block;
+  }
+  .navigation-main__icon::before, .navigation-main__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  .navigation-main__icon::before {
+    top: -0.8rem;
+  }
+  .navigation-main__icon::after {
+    top: 0.8rem;
+  }
+  .navigation-main__button:hover .navigation-main__icon::before {
+    top: -1rem;
+  }
+  .navigation-main__button:hover .navigation-main__icon::after {
+    top: 1rem;
+  }
+  .navigation-main__checkbox:checked + .navigation-main__button .navigation-main__icon {
+    background-color: transparent;
+  }
+  .navigation-main__checkbox:checked + .navigation-main__button .navigation-main__icon::before {
+    top: 0;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  .navigation-main__checkbox:checked + .navigation-main__button .navigation-main__icon::after {
+    top: 0;
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
   }
 }
 
@@ -946,7 +1098,13 @@ section {
 
 @media only screen and (max-width: 61.875em) {
   .section__vacations {
-    height: 130rem;
+    height: 120rem;
+  }
+}
+
+@media only screen and (max-width: 40.625em) {
+  .section__vacations {
+    height: 90rem;
   }
 }
 
@@ -956,6 +1114,12 @@ section {
   background-color: black;
   color: #fff;
   padding: 4rem;
+}
+
+@media only screen and (max-width: 31.25em) {
+  .footer {
+    padding: 1.5rem;
+  }
 }
 
 .header {
@@ -1030,7 +1194,7 @@ section {
 
 @media only screen and (max-width: 40.625em) {
   .section-heading__primary--prices {
-    display: block;
+    display: inline;
     width: 22%;
   }
 }

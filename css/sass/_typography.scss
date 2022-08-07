@@ -75,7 +75,7 @@
   @media only screen and (max-width: $bp-small) {
     &__primary {
       &--prices {
-        display: block;
+        display: inline;
         width: 22%;
       }
     }
